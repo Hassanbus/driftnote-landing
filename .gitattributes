@@ -1,0 +1,6 @@
+# Keep the same line endings (LF) on Windows, macOS and Linux.
+# WHY: without this, Git on Windows rewrites every line ending and
+# shows changes that are not real changes.
+* text=auto eol=lf
+*.png binary
+*.ico binary

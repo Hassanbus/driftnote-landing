@@ -1,0 +1,8 @@
+# Packages installed by npm (only needed for the tests)
+node_modules/
+
+# Local Vercel project link (created by the Vercel CLI)
+.vercel/
+
+# Logs
+*.log
