@@ -1,0 +1,87 @@
+/* Tabs for the interactive demo. */
+
+.tabs {
+  display: grid;
+  justify-items: center;
+}
+
+/* The rounded bar that holds the three tab buttons. */
+.tab-list {
+  display: inline-flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+}
+
+.tab {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+/* CSS reads aria-selected: the same attribute that screen readers use. */
+.tab[aria-selected="true"] {
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+}
+
+.tab-hint {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+/* Phones and tablets have no arrow keys, so the keyboard tip is hidden there. */
+@media (hover: none) and (pointer: coarse) {
+  .tab-hint {
+    display: none;
+  }
+}
+
+/* A panel: text first, mockup under it (side by side on wide screens). */
+.tab-panel {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+/* A short fade each time a panel is shown.
+   The keyframes have no "to" part: the panel animates back to its normal look. */
+.tab-panel:not([hidden]) {
+  animation: panel-in 0.35s ease backwards;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+.tab-copy > * + * {
+  margin-top: var(--space-4);
+}
+
+.tab-copy p {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 52rem) {
+  .tab-panel {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-7);
+  }
+}

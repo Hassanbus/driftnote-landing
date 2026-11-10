@@ -9,8 +9,9 @@ import { initTheme } from './theme.js';
 import { initMobileMenu } from './mobile-menu.js';
 import { initHeaderShadow } from './header-shadow.js';
 import { initActiveNav } from './active-nav.js';
+import { initTabs } from './tabs.js';
 
-const features = [initTheme, initMobileMenu, initHeaderShadow, initActiveNav];
+const features = [initTheme, initMobileMenu, initHeaderShadow, initActiveNav, initTabs];
 
 for (const startFeature of features) {
   // If one feature breaks, the others should still start.

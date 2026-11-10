@@ -16,7 +16,9 @@
   <link rel="stylesheet" href="css/components/buttons.css">
   <link rel="stylesheet" href="css/components/mockup.css">
   <link rel="stylesheet" href="css/components/mockup-notes.css">
+  <link rel="stylesheet" href="css/components/mockup-views.css">
   <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/components/tabs.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -165,6 +167,127 @@
             <p>Every action has a shortcut, so your hands can stay on the keys.</p>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE DEMO (tabs) -->
+    <section class="section section-alt" id="demo" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Interactive demo</p>
+          <h2 id="demo-title">Three steps in the life of a note</h2>
+          <p class="lead">Pick a tab to see how Driftnote helps you write, organize and search.</p>
+        </div>
+
+        <div class="tabs" data-reveal>
+          <!-- Only the selected tab has no tabindex="-1": the arrow keys move between tabs. -->
+          <div class="tab-list" role="tablist" aria-label="Demo views">
+            <button type="button" class="tab" role="tab" id="tab-write" aria-controls="panel-write" aria-selected="true">Write</button>
+            <button type="button" class="tab" role="tab" id="tab-organize" aria-controls="panel-organize" aria-selected="false" tabindex="-1">Organize</button>
+            <button type="button" class="tab" role="tab" id="tab-search" aria-controls="panel-search" aria-selected="false" tabindex="-1">Search</button>
+          </div>
+          <p class="tab-hint">Keyboard: use the left and right arrow keys to switch tabs.</p>
+
+          <div class="tab-panel" role="tabpanel" id="panel-write" aria-labelledby="tab-write" tabindex="0">
+            <div class="tab-copy">
+              <h3>Write without setup</h3>
+              <p>A new note opens with one key. Type in plain text and use simple Markdown for headings, lists and to-dos.</p>
+              <ul class="check-list">
+                <li>Headings, lists and to-dos</li>
+                <li>Saves while you type</li>
+                <li>A word count that stays out of the way</li>
+              </ul>
+            </div>
+            <div class="app" role="img" aria-label="Write view. A note called Meeting notes with two headings, two bullet points and two to-dos. A status line says the note is saved.">
+              <div class="app-bar">
+                <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
+                <span class="app-bar-title">Meeting notes</span>
+              </div>
+              <div class="view">
+                <p class="view-tools"><span>B</span><span>I</span><span>H</span><span>List</span><span>To-do</span></p>
+                <p class="editor-title">Meeting notes</p>
+                <p class="md"><span class="md-mark">##</span> Decisions</p>
+                <p class="md"><span class="md-mark">-</span> Ship the new search on Friday</p>
+                <p class="md"><span class="md-mark">-</span> Keep the editor plain and fast</p>
+                <p class="md"><span class="md-mark">##</span> Next steps</p>
+                <p class="check is-done">Share the notes with the team</p>
+                <p class="check">Write the release post<span class="caret"></span></p>
+                <p class="view-status">Saved · 24 words · Markdown</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" id="panel-organize" aria-labelledby="tab-organize" tabindex="0" hidden>
+            <div class="tab-copy">
+              <h3>Organize without folders</h3>
+              <p>Put a note in a notebook and add a tag or two. Later you can find it from both sides.</p>
+              <ul class="check-list">
+                <li>Notebooks for big topics</li>
+                <li>Tags for small details</li>
+                <li>One note can have many tags</li>
+              </ul>
+            </div>
+            <div class="app" role="img" aria-label="Organize view. Three notebooks called Work, Ideas and Travel. Each notebook holds note cards with tags.">
+              <div class="app-bar">
+                <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
+                <span class="app-bar-title">Notebooks</span>
+              </div>
+              <div class="view board">
+                <div>
+                  <p class="app-label">Work</p>
+                  <div class="board-card"><p class="note-title">Weekly review</p><span class="tag">#todo</span></div>
+                  <div class="board-card"><p class="note-title">Meeting notes</p><span class="tag">#team</span></div>
+                </div>
+                <div>
+                  <p class="app-label">Ideas</p>
+                  <div class="board-card"><p class="note-title">Book ideas</p><span class="tag">#read</span></div>
+                  <div class="board-card"><p class="note-title">App wishlist</p><span class="tag">#draft</span></div>
+                </div>
+                <div>
+                  <p class="app-label">Travel</p>
+                  <div class="board-card"><p class="note-title">Trip to Lisbon</p><span class="tag">#todo</span> <span class="tag">#food</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" id="panel-search" aria-labelledby="tab-search" tabindex="0" hidden>
+            <div class="tab-copy">
+              <h3>Search while you type</h3>
+              <p>Type a word and the list gets shorter with every letter. The match is highlighted, so you can see why a note was found.</p>
+              <ul class="check-list">
+                <li>Searches titles and text</li>
+                <li>Highlights the matching words</li>
+                <li>Filter by notebook or tag</li>
+              </ul>
+            </div>
+            <div class="app" role="img" aria-label="Search view. The word lisbon is typed in the search box. Three notes are found and the matching word is highlighted in each one.">
+              <div class="app-bar">
+                <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
+                <span class="app-bar-title">Search</span>
+              </div>
+              <div class="view">
+                <p class="app-search view-search"><svg class="icon"><use href="icons.svg#search"/></svg><span>lisbon<span class="caret"></span></span></p>
+                <p class="view-status">3 notes found</p>
+                <div class="note is-active">
+                  <p class="note-title">Trip to <mark>Lisbon</mark></p>
+                  <p class="note-text">Three days in May. Keep the plan light.</p>
+                  <p class="note-meta">Travel · Today</p>
+                </div>
+                <div class="note">
+                  <p class="note-title">Food list</p>
+                  <p class="note-text">Custard tarts in <mark>Lisbon</mark>, grilled fish by the river</p>
+                  <p class="note-meta">Travel · Yesterday</p>
+                </div>
+                <div class="note">
+                  <p class="note-title">Packing</p>
+                  <p class="note-text">A light jacket for <mark>Lisbon</mark> evenings</p>
+                  <p class="note-meta">Travel · Monday</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

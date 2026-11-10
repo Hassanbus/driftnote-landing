@@ -1,0 +1,101 @@
+/* The three mockup views shown in the demo tabs: Write, Organize, Search. */
+
+.view {
+  min-height: 19rem;
+  padding: var(--space-4);
+}
+
+.view-status {
+  margin-block: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+/* --- Write view --- */
+
+/* The row of small format buttons (B, I, H ...). */
+.view-tools {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: var(--space-3);
+}
+
+.view-tools span {
+  min-width: 1.75rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  text-align: center;
+}
+
+.view .editor-title {
+  margin-bottom: var(--space-2);
+}
+
+/* A line of Markdown, in a monospace font like in a code editor. */
+.md {
+  padding-block: 0.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.md-mark {
+  color: var(--color-brand);
+  font-weight: 700;
+}
+
+/* The text cursor. It blinks 4 times and then stays on.
+   WHY not forever: endless blinking is distracting for some people. */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  background: var(--color-brand);
+  vertical-align: text-bottom;
+  animation: caret-blink 1.1s steps(1) 4;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Organize view --- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.board-card {
+  margin-top: var(--space-2);
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.board-card .note-title {
+  margin-bottom: 0.25rem;
+}
+
+/* Three notebooks side by side when the mockup itself is wide enough. */
+@container (min-width: 30rem) {
+  .board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* --- Search view --- */
+
+/* The search box looks "active": brand border and dark text. */
+.view-search {
+  border-color: var(--color-brand);
+  color: var(--color-text);
+  font-weight: 600;
+}
