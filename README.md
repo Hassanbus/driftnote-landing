@@ -5,7 +5,7 @@ Built with only HTML, CSS and vanilla JavaScript: no framework, no UI library an
 
 ![The Driftnote landing page: a headline next to a mockup of the app](docs/screenshot.png)
 
-**Live demo:** the link is added after the first deploy.
+**Live demo:** https://driftnote-landing.vercel.app
 
 > Fictional product. Demo project. There are no fake testimonials, no fake company
 > logos and no fake user numbers. No data is sent anywhere.
@@ -78,6 +78,18 @@ npm test
 
 `package.json` is only for the tests. The site itself needs no install.
 
+### Deploy
+
+The site is hosted on Vercel as plain static files: Vercel does not build anything.
+`.vercelignore` keeps the tests, the docs and the npm files off the live site.
+
+The GitHub repository is **not** connected to Vercel (the connection failed when I set it up),
+so a push to GitHub does not update the live site. To deploy, run this in the project folder:
+
+```bash
+npx vercel --prod
+```
+
 ## Folder structure
 
 ```
@@ -106,16 +118,23 @@ docs/
 
 ## Quality checks
 
-Measured on 2026-11-10 on a local static server (`npx serve`), before the first deploy.
+Measured on 2026-11-10. Lighthouse ran on the live site. The axe-core, keyboard and layout
+checks ran locally and again on the live site, with the same results.
 
 | Check | Result |
 |-------|--------|
 | Unit tests (Vitest) | 34 of 34 pass |
-| Lighthouse 13.6, mobile | Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100 |
-| Lighthouse 13.6, desktop | Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100 |
+| Lighthouse 13.6, home page, mobile | Performance 73, 100, 93 and 100 in four runs · Accessibility 100 · Best Practices 100 · SEO 100 |
+| Lighthouse 13.6, home page, desktop | Performance 97 · Accessibility 100 · Best Practices 100 · SEO 100 |
+| Lighthouse 13.6, privacy page, mobile | Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100 |
 | axe-core 4.14 | 0 violations in 22 audits (light and dark, 360 and 1280 px, open menu, tabs, form errors) |
 | Keyboard only | All 34 Tab stops can be reached and show a focus ring |
 | Layout | No sideways scrolling at 360, 768 and 1280 px, in light and dark mode |
+
+Why the mobile Performance score changes: Lighthouse measures how long the work takes on the
+test computer and multiplies it to simulate a slow phone. When that computer is busy, the work
+takes longer and the score drops. The run that gave 73 had a CPU benchmark of 1508; the runs
+that gave 100 had about 2150.
 
 ## What I learned
 
