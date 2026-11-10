@@ -83,8 +83,8 @@ npm test
 The site is hosted on Vercel as plain static files: Vercel does not build anything.
 `.vercelignore` keeps the tests, the docs and the npm files off the live site.
 
-The GitHub repository is **not** connected to Vercel (the connection failed when I set it up),
-so a push to GitHub does not update the live site. To deploy, run this in the project folder:
+The GitHub repository is connected to Vercel, so every push to `main` updates the live site.
+To deploy by hand instead, run this in the project folder:
 
 ```bash
 npx vercel --prod
