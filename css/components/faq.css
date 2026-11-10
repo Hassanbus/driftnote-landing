@@ -1,0 +1,58 @@
+/* The FAQ accordion. */
+
+.faq {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.faq-item + .faq-item {
+  border-top: 1px solid var(--color-border);
+}
+
+/* The heading only gives structure. The button inside it carries the style. */
+.faq-item h3 {
+  font-size: inherit;
+  letter-spacing: 0;
+}
+
+.faq-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.faq-button:hover {
+  color: var(--color-brand);
+}
+
+/* The box has overflow: hidden, so a normal focus ring would be cut off.
+   A negative offset draws the ring inside the button. */
+.faq-button:focus-visible {
+  outline-offset: -3px;
+}
+
+.faq-button .icon {
+  transition: transform 0.2s ease;
+}
+
+/* CSS reads aria-expanded: the arrow points up while the answer is open. */
+.faq-button[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--color-text-muted);
+}

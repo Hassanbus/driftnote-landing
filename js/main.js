@@ -12,6 +12,7 @@ import { initActiveNav } from './active-nav.js';
 import { initTabs } from './tabs.js';
 import { initCalculator } from './calculator-ui.js';
 import { initPricing } from './pricing-ui.js';
+import { initFaq } from './faq.js';
 
 const features = [
   initTheme,
@@ -21,6 +22,7 @@ const features = [
   initTabs,
   initCalculator,
   initPricing,
+  initFaq,
 ];
 
 for (const startFeature of features) {

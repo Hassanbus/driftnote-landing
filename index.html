@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/components/calculator.css">
   <link rel="stylesheet" href="css/components/billing-switch.css">
   <link rel="stylesheet" href="css/components/pricing.css">
+  <link rel="stylesheet" href="css/components/faq.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -397,6 +398,88 @@
           </li>
         </ul>
         <p class="fine-print pricing-note">Demo only: nothing is for sale. The plan buttons jump to the newsletter form.</p>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container-narrow">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Honest answers</h2>
+          <p class="lead">Short answers about this demo and how it works.</p>
+        </div>
+
+        <!-- Every answer is open in the HTML, so it can be read without JavaScript.
+             js/faq.js closes them and keeps one open at a time. -->
+        <div class="faq" data-reveal data-faq>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-1">
+                Is Driftnote a real product?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-1">
+              <p>No. Driftnote is a fictional app. This page is a demo project that shows how to build a landing page with only HTML, CSS and vanilla JavaScript.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-2">
+                Can I buy one of the plans?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-2">
+              <p>No. Nothing is for sale here. The prices come from a small data object in the code, and the plan buttons only jump to the newsletter form.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-3">
+                What happens to my email in the newsletter form?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-3">
+              <p>Nothing. The form checks your email in your browser and shows a message. The address is not sent to a server and it is not saved anywhere.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-4">
+                Does this page use cookies or trackers?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-4">
+              <p>No cookies, no analytics and no trackers. The page saves one thing in your own browser: your choice of light or dark mode. You can read more on the <a href="privacy.html">privacy page</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-5">
+                How is the time-saved number calculated?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-5">
+              <p>Notes per day × minutes per note × 22 working days. Half of that time counts as saved, and the minutes are turned into hours. The 50% is an example, not a measured result.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" class="faq-button" aria-expanded="true" aria-controls="faq-answer-6">
+                How was this page built?
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-6">
+              <p>With plain HTML, CSS and JavaScript modules. There is no framework and no build step. Vitest is used only to test two small files with pure functions.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
