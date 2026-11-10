@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Driftnote</title>
+  <!-- Search engines should not list an error page. -->
+  <meta name="robots" content="noindex">
+
+  <!-- On this page every path starts with "/".
+       WHY: the host shows this file for ANY wrong address, for example /a/b/c.
+       A relative path like "css/..." would then point to /a/b/css/... and the
+       styles would be missing. "/" always starts from the top of the site. -->
+  <link rel="stylesheet" href="/css/base/tokens.css">
+  <link rel="stylesheet" href="/css/base/reset.css">
+  <link rel="stylesheet" href="/css/base/typography.css">
+  <link rel="stylesheet" href="/css/base/a11y.css">
+  <link rel="stylesheet" href="/css/layout/page.css">
+  <link rel="stylesheet" href="/css/layout/header.css">
+  <link rel="stylesheet" href="/css/layout/footer.css">
+  <link rel="stylesheet" href="/css/layout/simple-page.css">
+  <link rel="stylesheet" href="/css/components/buttons.css">
+
+  <script src="/js/theme-init.js"></script>
+  <script type="module" src="/js/simple-page.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <svg class="logo-mark" aria-hidden="true"><use href="/icons.svg#logo"/></svg>
+        Driftnote
+      </a>
+      <a class="header-link" href="/">Back to home</a>
+      <button type="button" class="icon-btn" aria-pressed="false" data-theme-toggle>
+        <span class="visually-hidden">Dark mode</span>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="/icons.svg#moon"/></svg>
+        <svg class="icon icon-sun" aria-hidden="true"><use href="/icons.svg#sun"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="container error-page">
+    <p class="eyebrow">Error 404</p>
+    <h1>This page drifted away</h1>
+    <p class="lead">The address may be wrong, or the page may have moved.</p>
+    <a class="btn btn-primary" href="/">Back to home</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="/">
+          <svg class="logo-mark" aria-hidden="true"><use href="/icons.svg#logo"/></svg>
+          Driftnote
+        </a>
+        <p>Fictional product. Demo project.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#demo">Demo</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+      <p class="footer-note">Built with HTML, CSS and vanilla JavaScript. No cookies, no trackers.</p>
+    </div>
+  </footer>
+</body>
+</html>

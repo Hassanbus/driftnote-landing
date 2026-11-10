@@ -1,0 +1,55 @@
+/* The footer at the bottom of every page. */
+
+.site-footer {
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.footer-inner {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.footer-brand p {
+  margin-top: var(--space-2);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+}
+
+.footer-links a {
+  display: inline-block;
+  /* Padding makes the link taller, so it is easier to tap. */
+  padding-block: var(--space-2);
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--color-brand);
+  text-decoration: underline;
+}
+
+.footer-note {
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Wide screens: brand left, links right, the note in a full row below. */
+@media (min-width: 46rem) {
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .footer-note {
+    grid-column: 1 / -1;
+  }
+}

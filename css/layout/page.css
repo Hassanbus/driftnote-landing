@@ -1,5 +1,16 @@
 /* Page layout: the centered container and the spacing of sections. */
 
+/* The page is a column: header, main, footer. "flex: 1" lets main take the
+   free space, so the footer sits at the bottom even on a short page (404). */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 .container {
   /* Full width minus a little side space, but never wider than --container. */
   width: min(100% - 2 * var(--space-4), var(--container));
