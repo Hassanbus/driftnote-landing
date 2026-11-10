@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The Driftnote logo with fixed colors.
+       WHY not reuse icons.svg: a favicon cannot read the CSS of the page,
+       so the colors have to be written into the file. -->
+  <rect width="32" height="32" rx="9" fill="#0f766e"/>
+  <path d="M8 13c2.7-3.2 5.3-3.2 8 0s5.3 3.2 8 0M8 20c2.7-3.2 5.3-3.2 8 0s5.3 3.2 8 0" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
