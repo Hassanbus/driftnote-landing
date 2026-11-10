@@ -1,0 +1,69 @@
+/* Accessibility helpers: focus ring, skip link, hidden text, reduced motion. */
+
+/* A clear focus ring for keyboard users.
+   :focus-visible shows it for the keyboard but not for mouse clicks. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* The sticky header must not cover a link target or the focused element. */
+html {
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+}
+
+/* Hidden on screen, but still read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The skip link is the first thing a keyboard user reaches.
+   It stays above the screen until it gets focus. */
+.skip-link {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 600;
+  transform: translateY(-300%);
+}
+
+.skip-link:hover {
+  color: var(--color-bg);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Smooth scrolling only for people who did not ask for less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* People who ask for less motion get (almost) no animation at all.
+   !important is fine here: this rule must beat every other animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

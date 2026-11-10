@@ -1,0 +1,56 @@
+/* A small reset: every browser starts from the same place. */
+
+*,
+*::before,
+*::after {
+  /* Width now includes padding and border, which makes layout math easier. */
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  /* Stop phones from changing the text size when the screen rotates. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+svg {
+  display: block;
+}
+
+/* Form controls do not inherit the page font by default. */
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Lists with a class are used for layout, so they lose their bullets. */
+ul[class] {
+  padding: 0;
+  list-style: none;
+}
+
+/* "hidden" must always win, even if a class sets display: flex or grid.
+   The tabs and the FAQ rely on this. */
+[hidden] {
+  display: none !important;
+}

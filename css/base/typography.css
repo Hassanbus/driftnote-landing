@@ -1,0 +1,82 @@
+/* Text styles: body text, headings, links and small helpers. */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  /* "balance" makes the lines of a heading about the same length. */
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-brand);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-brand-strong);
+}
+
+/* A larger intro paragraph under a heading. */
+.lead {
+  max-width: 38rem;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+/* The small uppercase label above a section heading. */
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.text-brand {
+  color: var(--color-brand);
+}
+
+.fine-print {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Highlighted search matches in the demo. */
+mark {
+  padding: 0 0.15em;
+  border-radius: 0.2em;
+  background: var(--color-accent-soft);
+  color: inherit;
+}

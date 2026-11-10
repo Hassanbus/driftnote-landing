@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- One file with the logo and every icon (an "SVG sprite").
+       A page shows an icon with: <svg class="icon"><use href="icons.svg#search"/></svg>
+       WHY: each icon is drawn once and shared by all three pages.
+       The paths have no colors: they take them from the CSS of the page
+       (.icon sets the stroke, .logo-mark sets fill and stroke). -->
+
+  <!-- Logo: a rounded square with two waves ("drifting" lines of text). -->
+  <symbol id="logo" viewBox="0 0 32 32">
+    <rect width="32" height="32" rx="9" stroke="none"/>
+    <path d="M8 13c2.7-3.2 5.3-3.2 8 0s5.3 3.2 8 0M8 20c2.7-3.2 5.3-3.2 8 0s5.3 3.2 8 0" fill="none" stroke-width="2.6" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Feature icons -->
+  <symbol id="bolt" viewBox="0 0 24 24">
+    <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
+  </symbol>
+  <symbol id="hash" viewBox="0 0 24 24">
+    <path d="M9.5 3l-2 18M16.5 3l-2 18M4 9h17M3 15h17"/>
+  </symbol>
+  <symbol id="tag" viewBox="0 0 24 24">
+    <path d="M3 4.5V11a2 2 0 0 0 .6 1.4l8 8a2 2 0 0 0 2.8 0l6-6a2 2 0 0 0 0-2.8l-8-8A2 2 0 0 0 11 3H4.5A1.5 1.5 0 0 0 3 4.5z"/>
+    <path d="M7.5 7.5h.01"/>
+  </symbol>
+  <symbol id="search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7"/>
+    <path d="M20 20l-3.9-3.9"/>
+  </symbol>
+  <symbol id="offline" viewBox="0 0 24 24">
+    <path d="M7 18a4 4 0 0 1-.5-7.97A6 6 0 0 1 18 9.5a4.3 4.3 0 0 1 .5 8.5z"/>
+    <path d="M9.5 14.2l1.8 1.8 3.4-3.6"/>
+  </symbol>
+  <symbol id="keyboard" viewBox="0 0 24 24">
+    <rect x="2" y="6" width="20" height="12" rx="2"/>
+    <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7.5 14h9"/>
+  </symbol>
+
+  <!-- Interface icons -->
+  <symbol id="sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+  </symbol>
+  <symbol id="moon" viewBox="0 0 24 24">
+    <path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a7.5 7.5 0 0 0 10 10z"/>
+  </symbol>
+  <symbol id="menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+  <symbol id="close" viewBox="0 0 24 24">
+    <path d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="chevron" viewBox="0 0 24 24">
+    <path d="M6 9l6 6 6-6"/>
+  </symbol>
+  <symbol id="arrow-up" viewBox="0 0 24 24">
+    <path d="M12 19V5M6 11l6-6 6 6"/>
+  </symbol>
+</svg>

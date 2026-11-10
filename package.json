@@ -1,0 +1,13 @@
+{
+  "name": "driftnote-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for Driftnote, a fictional note-taking app. This file exists only for the tests: the site itself needs no install and no build.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^5.1.0"
+  }
+}
