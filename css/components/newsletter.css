@@ -1,0 +1,82 @@
+/* The newsletter block: text on one side, the form on the other. */
+
+.newsletter {
+  display: grid;
+  gap: var(--space-6);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-brand-soft);
+}
+
+.newsletter h2 {
+  margin-bottom: var(--space-3);
+}
+
+.newsletter-form label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+/* Input and button sit in one row and wrap on small screens. */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.form-row input {
+  /* Grow to fill the row, but wrap the button below 14rem. */
+  flex: 1 1 14rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.form-row input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* The error is shown with a color AND with text, never with color alone. */
+.form-row input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 1px var(--color-danger);
+}
+
+.form-error,
+.form-success {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.form-error {
+  color: var(--color-danger);
+}
+
+.form-success {
+  color: var(--color-success);
+}
+
+/* An empty message takes no space. */
+.form-success:empty {
+  display: none;
+}
+
+.form-note {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 52rem) {
+  .newsletter {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-7);
+  }
+}

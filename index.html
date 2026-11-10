@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/components/billing-switch.css">
   <link rel="stylesheet" href="css/components/pricing.css">
   <link rel="stylesheet" href="css/components/faq.css">
+  <link rel="stylesheet" href="css/components/newsletter.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -479,6 +480,32 @@
               <p>With plain HTML, CSS and JavaScript modules. There is no framework and no build step. Vitest is used only to test two small files with pure functions.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. NEWSLETTER -->
+    <section class="section" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter" data-reveal>
+          <div>
+            <h2 id="newsletter-title">Try the newsletter form</h2>
+            <p class="lead">Type an email address and see how the form checks it, right in your browser.</p>
+          </div>
+
+          <!-- novalidate: we show our own error messages instead of the browser's.
+               The input has NO name attribute on purpose: a field without a name
+               is never part of a form submission, so the email cannot be sent. -->
+          <form class="newsletter-form" novalidate data-newsletter>
+            <label for="email">Email address</label>
+            <div class="form-row">
+              <input type="email" id="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="email-error email-note">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p class="form-error" id="email-error" data-error hidden></p>
+            <p class="form-success" role="status" data-success></p>
+            <p class="form-note" id="email-note">Demo only: your email is not sent or stored anywhere.</p>
+          </form>
         </div>
       </div>
     </section>

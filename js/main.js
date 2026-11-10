@@ -13,6 +13,7 @@ import { initTabs } from './tabs.js';
 import { initCalculator } from './calculator-ui.js';
 import { initPricing } from './pricing-ui.js';
 import { initFaq } from './faq.js';
+import { initNewsletter } from './newsletter.js';
 
 const features = [
   initTheme,
@@ -23,6 +24,7 @@ const features = [
   initCalculator,
   initPricing,
   initFaq,
+  initNewsletter,
 ];
 
 for (const startFeature of features) {
