@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/components/mockup-views.css">
   <link rel="stylesheet" href="css/components/cards.css">
   <link rel="stylesheet" href="css/components/tabs.css">
+  <link rel="stylesheet" href="css/components/calculator.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -286,6 +287,47 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TIME SAVED CALCULATOR -->
+    <section class="section" id="calculator" aria-labelledby="calculator-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Time saved</p>
+          <h2 id="calculator-title">How much time goes into looking for notes?</h2>
+          <p class="lead">Move the sliders to match your day. The estimate updates as you go.</p>
+        </div>
+
+        <div class="card calc" data-reveal data-calculator>
+          <div>
+            <div class="field">
+              <div class="field-row">
+                <label for="notes-per-day">Notes you look for each day</label>
+                <!-- aria-hidden: the slider itself already tells screen readers its value. -->
+                <span class="field-value" aria-hidden="true" data-notes-value>10 notes</span>
+              </div>
+              <input type="range" id="notes-per-day" min="1" max="40" step="1" value="10">
+            </div>
+            <div class="field">
+              <div class="field-row">
+                <label for="minutes-per-note">Minutes spent searching for each note</label>
+                <span class="field-value" aria-hidden="true" data-minutes-value>2 min</span>
+              </div>
+              <input type="range" id="minutes-per-note" min="0.5" max="10" step="0.5" value="2">
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <p class="calc-label">Estimated time saved</p>
+            <!-- <output> is a live region: screen readers announce the new result. -->
+            <output class="calc-number" for="notes-per-day minutes-per-note">
+              <span class="calc-figure" data-hours-month>—</span> hours per month
+            </output>
+            <p>That is about <strong data-hours-year>—</strong> hours a year.</p>
+            <p class="fine-print">How it is counted: notes × minutes × 22 working days × 50% saved ÷ 60. Driftnote is fictional, so this is an example, not measured data.</p>
           </div>
         </div>
       </div>
