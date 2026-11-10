@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="css/components/cards.css">
   <link rel="stylesheet" href="css/components/tabs.css">
   <link rel="stylesheet" href="css/components/calculator.css">
+  <link rel="stylesheet" href="css/components/billing-switch.css">
+  <link rel="stylesheet" href="css/components/pricing.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -330,6 +332,71 @@
             <p class="fine-print">How it is counted: notes × minutes × 22 working days × 50% saved ÷ 60. Driftnote is fictional, so this is an example, not measured data.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 6. PRICING -->
+    <section class="section section-alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title">Simple plans, no surprises</h2>
+          <p class="lead">Pay monthly, or pay yearly and get two months free.</p>
+        </div>
+
+        <!-- Two radio buttons: the browser gives us the keyboard support for free. -->
+        <fieldset class="billing" data-billing>
+          <legend class="visually-hidden">Billing period</legend>
+          <label class="billing-option"><input type="radio" name="billing" value="monthly" checked><span>Monthly</span></label>
+          <label class="billing-option"><input type="radio" name="billing" value="yearly"><span>Yearly <em>2 months free</em></span></label>
+        </fieldset>
+        <p class="visually-hidden" role="status" data-billing-status></p>
+
+        <!-- The prices are empty on purpose: js/pricing-ui.js fills them in
+             from the PLANS object in js/pricing.js, the single source of truth. -->
+        <ul class="plan-grid">
+          <li class="card plan" data-plan="free" data-reveal>
+            <h3>Free</h3>
+            <p>For trying things out.</p>
+            <p class="plan-price"><span class="plan-amount" data-price>—</span> <span data-period></span></p>
+            <p class="plan-note" data-note></p>
+            <ul class="check-list">
+              <li>Up to 100 notes</li>
+              <li>1 device</li>
+              <li>Markdown editor</li>
+              <li>Search as you type</li>
+            </ul>
+            <a class="btn btn-secondary" href="#newsletter">Start free</a>
+          </li>
+          <li class="card plan plan-featured" data-plan="plus" data-reveal>
+            <p class="plan-badge">Our pick</p>
+            <h3>Plus</h3>
+            <p>For people who write every day.</p>
+            <p class="plan-price"><span class="plan-amount" data-price>—</span> <span data-period></span></p>
+            <p class="plan-note" data-note></p>
+            <ul class="check-list">
+              <li>Unlimited notes</li>
+              <li>Sync on all your devices</li>
+              <li>Tags and notebooks</li>
+              <li>Offline mode</li>
+            </ul>
+            <a class="btn btn-primary" href="#newsletter">Choose Plus</a>
+          </li>
+          <li class="card plan" data-plan="team" data-reveal>
+            <h3>Team</h3>
+            <p>For small teams that share notes.</p>
+            <p class="plan-price"><span class="plan-amount" data-price>—</span> <span data-period></span></p>
+            <p class="plan-note" data-note></p>
+            <ul class="check-list">
+              <li>Everything in Plus</li>
+              <li>Shared notebooks</li>
+              <li>Roles and permissions</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn-secondary" href="#newsletter">Choose Team</a>
+          </li>
+        </ul>
+        <p class="fine-print pricing-note">Demo only: nothing is for sale. The plan buttons jump to the newsletter form.</p>
       </div>
     </section>
   </main>

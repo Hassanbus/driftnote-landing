@@ -86,6 +86,8 @@ mark {
 .check-list {
   display: grid;
   gap: var(--space-2);
+  /* Keep the items together at the top, even if the list is made taller. */
+  align-content: start;
 }
 
 .check-list li {

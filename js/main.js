@@ -11,6 +11,7 @@ import { initHeaderShadow } from './header-shadow.js';
 import { initActiveNav } from './active-nav.js';
 import { initTabs } from './tabs.js';
 import { initCalculator } from './calculator-ui.js';
+import { initPricing } from './pricing-ui.js';
 
 const features = [
   initTheme,
@@ -19,6 +20,7 @@ const features = [
   initActiveNav,
   initTabs,
   initCalculator,
+  initPricing,
 ];
 
 for (const startFeature of features) {
