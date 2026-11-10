@@ -40,8 +40,8 @@
   border-color: var(--color-text);
 }
 
+/* Less padding and smaller text, but the same height: still easy to tap. */
 .btn-small {
-  min-height: 2.5rem;
   padding: 0.5rem 1rem;
   font-size: var(--text-sm);
 }
