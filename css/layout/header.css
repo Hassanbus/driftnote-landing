@@ -1,0 +1,111 @@
+/* The sticky header: logo, navigation, theme button and mobile menu. */
+
+.site-header {
+  /* "sticky" keeps the header at the top while the page scrolls under it. */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid transparent;
+  background: var(--color-bg);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* js/header-shadow.js adds this class once the page is scrolled a little. */
+.site-header.is-scrolled {
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--header-height);
+}
+
+.header-inner .logo {
+  /* An "auto" margin takes all free space, so the rest moves to the right. */
+  margin-right: auto;
+}
+
+/* Small screens: the nav is a panel under the header, closed by default. */
+.site-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+/* CSS reads the ARIA attribute. WHY: what you see and what a screen reader
+   hears can never disagree, because both come from the same attribute. */
+.menu-toggle[aria-expanded="true"] + .site-nav {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.site-nav a {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+/* js/active-nav.js sets aria-current on the link of the section in view. */
+.site-nav a[aria-current] {
+  background: var(--color-brand-soft);
+  color: var(--color-brand-strong);
+}
+
+/* The header button is hidden on phones: the hero has the same links.
+   WHY two classes: buttons.css loads later and also sets "display" for .btn.
+   Two classes beat one, so this rule wins whatever the file order is. */
+.site-header .header-cta {
+  display: none;
+}
+
+/* Wide screens: the nav sits in the header row and the menu button is gone. */
+@media (min-width: 60rem) {
+  .site-header .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+    position: static;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .site-nav a {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .site-header .header-cta {
+    display: inline-flex;
+    margin-left: var(--space-2);
+  }
+}

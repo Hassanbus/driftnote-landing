@@ -1,0 +1,118 @@
+/* Buttons, icon buttons, icons and the logo. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 2.75rem = 44px: big enough to tap with a finger. */
+  min-height: 2.75rem;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-strong);
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text);
+}
+
+.btn-small {
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+}
+
+/* A square button that only shows an icon (menu, theme). */
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.icon-btn:hover {
+  background: var(--color-bg-alt);
+}
+
+/* All icons are line drawings. They take the text color of their parent. */
+.icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show "menu" when the menu is closed and "close" when it is open. */
+.icon-close,
+[aria-expanded="true"] > .icon-menu {
+  display: none;
+}
+
+[aria-expanded="true"] > .icon-close {
+  display: block;
+}
+
+/* Same idea for the theme button: moon in light mode, sun in dark mode. */
+.icon-sun,
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+  display: block;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--color-text);
+}
+
+/* The logo has two parts: the square uses "fill", the waves use "stroke". */
+.logo-mark {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-brand);
+  stroke: var(--color-on-brand);
+}

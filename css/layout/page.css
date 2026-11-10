@@ -1,0 +1,37 @@
+/* Page layout: the centered container and the spacing of sections. */
+
+.container {
+  /* Full width minus a little side space, but never wider than --container. */
+  width: min(100% - 2 * var(--space-4), var(--container));
+  margin-inline: auto;
+}
+
+/* A narrower column for text-heavy parts such as the FAQ. */
+.container-narrow {
+  --container: 46rem;
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+/* Every second section gets a slightly different background,
+   so it is easy to see where one section ends. */
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+/* The eyebrow + heading + intro at the top of each section. */
+.section-head {
+  max-width: 42rem;
+  margin: 0 auto var(--space-7);
+  text-align: center;
+}
+
+.section-head h2 {
+  margin-block: var(--space-2) var(--space-3);
+}
+
+.section-head .lead {
+  margin-inline: auto;
+}
