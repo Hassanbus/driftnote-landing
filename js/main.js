@@ -14,6 +14,8 @@ import { initCalculator } from './calculator-ui.js';
 import { initPricing } from './pricing-ui.js';
 import { initFaq } from './faq.js';
 import { initNewsletter } from './newsletter.js';
+import { initReveal } from './reveal.js';
+import { initBackToTop } from './back-to-top.js';
 
 const features = [
   initTheme,
@@ -25,6 +27,8 @@ const features = [
   initPricing,
   initFaq,
   initNewsletter,
+  initReveal,
+  initBackToTop,
 ];
 
 for (const startFeature of features) {

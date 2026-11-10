@@ -1,0 +1,74 @@
+/* Two things that react to scrolling: the reveal animation and the
+   "back to top" button. */
+
+/* --- Scroll reveal --- */
+
+/* js/reveal.js adds "reveal-wait" to blocks below the screen and swaps it
+   for "reveal-in" when they scroll into view. */
+.reveal-wait {
+  opacity: 0;
+}
+
+/* The keyframes only have a "from" part, so the block animates to its normal
+   look and nothing is left behind (hover effects keep working). */
+.reveal-in {
+  animation: reveal-in 0.6s ease backwards;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+/* Cards that sit in one row come in one after another. */
+.reveal-in:nth-child(3n + 2) {
+  animation-delay: 0.08s;
+}
+
+.reveal-in:nth-child(3n) {
+  animation-delay: 0.16s;
+}
+
+/* On paper nothing may stay hidden. */
+@media print {
+  .reveal-wait {
+    opacity: 1;
+  }
+}
+
+/* --- Back to top --- */
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 15;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: var(--shadow-md);
+  /* Hidden at first. "visibility: hidden" also takes it out of the Tab order,
+     so keyboard users cannot land on a button they cannot see. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* js/back-to-top.js adds this class after the page is scrolled down. */
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.back-to-top:hover {
+  background: var(--color-brand-strong);
+  color: var(--color-on-brand);
+}

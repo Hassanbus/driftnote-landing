@@ -4,6 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Driftnote — Write it down. Find it in seconds.</title>
+  <meta name="description" content="Driftnote is a fictional note-taking app. This demo landing page is built with only HTML, CSS and vanilla JavaScript: no framework and no build step.">
+
+  <!-- Open Graph tags: the title, text and image that show up when the link is shared. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Driftnote">
+  <meta property="og:title" content="Driftnote — Write it down. Find it in seconds.">
+  <meta property="og:description" content="A demo landing page for a fictional note-taking app, built with only HTML, CSS and vanilla JavaScript.">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Driftnote landing page: the headline Write it down. Find it in seconds. next to a mockup of the app.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Two favicons: modern browsers take the sharp SVG, older ones the .ico file. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <!-- One <link> per file: the browser downloads them all at the same time. -->
   <link rel="stylesheet" href="css/base/tokens.css">
@@ -25,6 +41,7 @@
   <link rel="stylesheet" href="css/components/pricing.css">
   <link rel="stylesheet" href="css/components/faq.css">
   <link rel="stylesheet" href="css/components/newsletter.css">
+  <link rel="stylesheet" href="css/components/scroll.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -533,6 +550,12 @@
       </nav>
       <p class="footer-note">Built with HTML, CSS and vanilla JavaScript. No cookies, no trackers.</p>
     </div>
+
+    <!-- A normal link to the top of the page. js/back-to-top.js only shows and hides it. -->
+    <a class="back-to-top" href="#top" data-back-to-top>
+      <span class="visually-hidden">Back to top</span>
+      <svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up"/></svg>
+    </a>
   </footer>
 </body>
 </html>
