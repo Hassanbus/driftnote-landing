@@ -1,0 +1,81 @@
+/* The hero: the first screen, with the main message and the app mockup. */
+
+.hero {
+  position: relative;
+  /* "isolate" keeps the glow below (z-index: -1) inside the hero. */
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 1rem + 6vw, 5rem) var(--space-section);
+}
+
+/* Two soft colored glows behind the hero. They are only decoration.
+   Both fade to transparent before the edge of the hero, so no hard line shows. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(34rem 22rem at 82% 40%, var(--color-glow), transparent 70%),
+    radial-gradient(22rem 14rem at 6% 72%, var(--color-glow), transparent 70%);
+}
+
+/* One column on small screens: text first, mockup under it. */
+.hero-inner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+/* Every child of the text column gets the same space above it. */
+.hero-copy > * + * {
+  margin-top: var(--space-5);
+}
+
+/* The second half of the headline always starts on a new line. */
+.hero h1 span {
+  display: block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.badge-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-brand);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* The three short points sit in a row and wrap when space is short. */
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Two columns on wide screens: text left, mockup right.
+   minmax(0, ...) lets a column get smaller than its content if needed. */
+@media (min-width: 60rem) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+}

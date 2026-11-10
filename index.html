@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="css/base/a11y.css">
   <link rel="stylesheet" href="css/layout/page.css">
   <link rel="stylesheet" href="css/layout/header.css">
+  <link rel="stylesheet" href="css/layout/hero.css">
   <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/mockup.css">
+  <link rel="stylesheet" href="css/components/mockup-notes.css">
 
   <!-- Runs first, so the right theme is set before anything is drawn. -->
   <script src="js/theme-init.js"></script>
@@ -54,6 +57,72 @@
   </header>
 
   <main id="main">
+    <!-- 2. HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="badge"><span class="badge-dot" aria-hidden="true"></span>Fictional app · Demo project</p>
+          <h1 id="hero-title">Write it down. <span class="text-brand">Find it in seconds.</span></h1>
+          <p class="lead">Driftnote is a calm place for your notes. Write in plain text, sort with tags, and search everything as you type.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#demo">Try the demo</a>
+            <a class="btn btn-secondary" href="#pricing">See pricing</a>
+          </div>
+          <ul class="check-list hero-points">
+            <li>Plain-text Markdown</li>
+            <li>Search as you type</li>
+            <li>Works offline</li>
+          </ul>
+        </div>
+
+        <!-- The mockup is a drawing made of HTML and CSS. role="img" and
+             aria-label make screen readers treat it as one image with alt text. -->
+        <div class="app" role="img" aria-label="Driftnote app window. A sidebar lists notebooks and tags. A list shows three notes. The open note is called Trip to Lisbon and has a short checklist.">
+          <div class="app-bar">
+            <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
+            <span class="app-bar-title">Driftnote</span>
+          </div>
+          <div class="app-body">
+            <div class="app-side">
+              <p class="app-label">Notebooks</p>
+              <p class="app-nav-item is-active">Inbox <span>12</span></p>
+              <p class="app-nav-item">Work <span>8</span></p>
+              <p class="app-nav-item">Ideas <span>5</span></p>
+              <p class="app-nav-item">Travel <span>3</span></p>
+              <p class="app-label">Tags</p>
+              <p><span class="tag">#todo</span> <span class="tag">#draft</span></p>
+            </div>
+            <div class="app-list">
+              <p class="app-search"><svg class="icon"><use href="icons.svg#search"/></svg>Search notes</p>
+              <div class="note is-active">
+                <p class="note-title">Trip to Lisbon</p>
+                <p class="note-text">Flights, food list, what to pack</p>
+                <p class="note-meta">Today · #travel</p>
+              </div>
+              <div class="note">
+                <p class="note-title">Weekly review</p>
+                <p class="note-text">Three wins and one thing to fix</p>
+                <p class="note-meta">Yesterday · #work</p>
+              </div>
+              <div class="note">
+                <p class="note-title">Book ideas</p>
+                <p class="note-text">A short list for the summer</p>
+                <p class="note-meta">Monday · #read</p>
+              </div>
+            </div>
+            <div class="app-editor">
+              <p class="editor-title">Trip to Lisbon</p>
+              <p class="editor-meta">Travel · edited just now</p>
+              <p class="editor-text">Three days in May. Keep the plan light and leave time to walk.</p>
+              <p class="check is-done">Book the flights</p>
+              <p class="check is-done">Find a place to stay</p>
+              <p class="check">Make a food list</p>
+              <p class="check">Pack a small bag</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
