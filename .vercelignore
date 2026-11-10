@@ -1,0 +1,12 @@
+# Files that Vercel should not upload.
+# The live site is only the HTML, CSS, JavaScript and image files.
+#
+# WHY package.json is on this list: it exists only for the tests. Without it,
+# Vercel has nothing to install or build and serves the files exactly as they are.
+node_modules
+tests
+docs
+package.json
+package-lock.json
+README.md
+.gitattributes
